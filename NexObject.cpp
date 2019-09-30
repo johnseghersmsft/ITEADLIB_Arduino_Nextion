@@ -13,6 +13,7 @@
  * the License, or (at your option) any later version.
  */
 #include "NexObject.h"
+#include "NexHardware.h"
 
 NexObject::NexObject(uint8_t pid, uint8_t cid, const char *name)
 {
@@ -56,3 +57,19 @@ void NexObject::printObjInfo(void)
     dbSerialPrintln("]");
 }
 
+void NexObject::setVisible(bool isVisible)
+{
+    char buf[10];
+    strcpy(buf, "vis ");
+    itoa(__cid, buf + 4, 10);
+    strcat(buf, isVisible ? ",1" : ",0");
+    sendCommandWait(buf);
+}
+
+void NexObject::refresh()
+{
+    char buf[10];
+    strcpy(buf, "ref ");
+    itoa(__cid, buf + 4, 10);
+    sendCommandWait(buf);
+}

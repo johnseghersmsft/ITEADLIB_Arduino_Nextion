@@ -49,7 +49,11 @@ public: /* methods */
      */
     void printObjInfo(void);
 
-protected: /* methods */
+    void setVisible(bool isVisible);
+
+    void refresh();
+
+public: /* methods */
 
     /*
      * Get page id.

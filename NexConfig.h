@@ -41,10 +41,13 @@
 #define dbSerialPrint(a)    dbSerial.print(a)
 #define dbSerialPrintln(a)  dbSerial.println(a)
 #define dbSerialBegin(a)    dbSerial.begin(a)
+#define dbSerialPrintf(...) { char printfBuf[80]; sprintf(printfBuf, __VA_ARGS__); dbSerial.print(printfBuf); }
+#define dbSerialPrintf_P(f, ...) { char printfBuf[80]; sprintf_P(printfBuf, PSTR(f), __VA_ARGS__); dbSerial.print(printfBuf); }
 #else
 #define dbSerialPrint(a)    do{}while(0)
 #define dbSerialPrintln(a)  do{}while(0)
 #define dbSerialBegin(a)    do{}while(0)
+#define dbSerialPrintf(...) do{}while(0)
 #endif
 
 /**
