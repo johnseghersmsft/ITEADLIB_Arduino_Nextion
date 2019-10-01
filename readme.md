@@ -1,5 +1,9 @@
 @mainpage Home Page
 
+This is a fork that includes minor enhancements to the API and includes
+the changes written by RayLivingston posted on the 
+[Arduino forums](https://forum.arduino.cc/index.php?topic=620821.0)
+
 # Nextion
 
 --------------------------------------------------------------------------------
